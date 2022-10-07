@@ -40,7 +40,7 @@ def get_simple_blocks_by_function(image_base, listing):
 ghidra_file = askFile("Please select the Mesos Output-File", "Save To File")
 
 with open(ghidra_file.getAbsolutePath(), "wb") as fd:
-    input_name = currentProgram.getName()
+    input_name = currentProgram.getName().lower()
     image_base = currentProgram.getImageBase().getOffset()
 
     listing = currentProgram.getListing()
